@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Chris Adams",
+    "role": "CPTO",
+    "company": "Net Natives",
+    "bio": "Chris is Chief Product and Technology Officer at Net Natives, a Brighton-based digital agency helping universities attract students globally.",
+    "tags": ["Leadership", "Product", "EdTech", "Agency"],
+    "linkedin": "https://www.linkedin.com/in/chrisadams/",
+    "website": "",
+    "github": "",
+    "avatar": "",
+    "joined": "2020-01"
+  },
+  {
+    "name": "Emmanuel Ide",
+    "role": "Head of Engineering",
+    "company": "Glint",
+    "bio": "Emmanuel leads engineering at Glint, building tools that help organisations understand and improve employee engagement.",
+    "tags": ["Leadership", "People Analytics", "SaaS", "Teams"],
+    "linkedin": "https://www.linkedin.com/in/emmanuelide/",
+    "website": "",
+    "github": "",
+    "avatar": "",
+    "joined": "2020-01"
+  },
+  {
+    "name": "Martyn Fagg",
+    "role": "CIO",
+    "company": "Tillo",
+    "bio": "Martyn is CIO at Tillo, the global gift card network powering rewards, incentives and employee benefits for the world's leading brands.",
+    "tags": ["Leadership", "Fintech", "Scale-up", "Platform"],
+    "linkedin": "https://www.linkedin.com/in/martynfagg/",
+    "website": "",
+    "github": "",
+    "avatar": "",
+    "joined": "2020-01"
+  }
+]

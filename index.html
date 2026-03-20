@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brighton CTO – Engineering Leadership Community</title>
+  <meta name="description" content="Brighton CTO is a community for engineering leaders – CTOs, CIOs, Heads of Engineering and Engineering Managers – based in Brighton & Hove." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f2240'/><text x='16' y='22' text-anchor='middle' fill='%2360a5fa' font-size='16' font-weight='800' font-family='system-ui'>B</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link active">Home</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="members.html" class="nav__link">Members</a></li>
+      </ul>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">
+        Join on Meetup
+      </a>
+      <button class="nav__hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="index.html" class="nav__link active">Home</a>
+      <a href="events.html" class="nav__link">Events</a>
+      <a href="members.html" class="nav__link">Members</a>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:.5rem;">Join on Meetup</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="hero__eyebrow">Brighton &amp; Hove</span>
+          <h1>The community for<br><span>engineering leaders</span></h1>
+          <p class="hero__desc">
+            Brighton is home to over 1,500 tech companies. Brighton CTO brings together
+            CTOs, CIOs, Heads of Engineering and Engineering Managers for honest conversations,
+            shared learning and genuine connection.
+          </p>
+          <div class="hero__actions">
+            <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary">
+              Join on Meetup
+            </a>
+            <a href="https://brightoncto.slack.com" target="_blank" rel="noopener" class="btn btn--ghost">
+              Join Slack
+            </a>
+            <a href="events.html" class="btn btn--ghost">
+              Upcoming Events
+            </a>
+          </div>
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="hero__stat-number">1,500+</div>
+              <div class="hero__stat-label">Tech Companies</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">Monthly</div>
+              <div class="hero__stat-label">Meetups</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">Free</div>
+              <div class="hero__stat-label">To Join</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__graphic">🤝</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What we're about</h2>
+        <p>A space for engineering leaders to connect, share experiences and support each other — no sales pitches, no vendor decks.</p>
+      </div>
+      <div class="about-grid">
+        <div class="card">
+          <div class="card__icon">💬</div>
+          <h3>Honest conversations</h3>
+          <p>Talk candidly about the challenges of engineering leadership with peers who understand — hiring, culture, technical debt, stakeholder management.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🧠</div>
+          <h3>Shared learning</h3>
+          <p>Learn from peers who've navigated the same problems. Talks, workshops and roundtables on topics that actually matter to leaders in the room.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🌊</div>
+          <h3>Brighton-rooted</h3>
+          <p>Celebrate and strengthen Brighton's vibrant tech scene. Build lasting relationships with the people driving technology in our city.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🔓</div>
+          <h3>Always free</h3>
+          <p>No membership fees, no paywalls. Brighton CTO is a community-run group — just show up, contribute and benefit from the collective expertise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Join the community</h2>
+        <p>Connect between meetups on Slack or RSVP to our next event on Meetup.com.</p>
+      </div>
+      <div class="community-links">
+        <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="community-link-card">
+          <span class="icon">📅</span>
+          <strong>Meetup.com</strong>
+          <span>RSVP to events &amp; see who's coming</span>
+        </a>
+        <a href="https://brightoncto.slack.com" target="_blank" rel="noopener" class="community-link-card">
+          <span class="icon">💬</span>
+          <strong>Slack</strong>
+          <span>Chat, ask questions &amp; share knowledge</span>
+        </a>
+        <a href="members.html" class="community-link-card">
+          <span class="icon">👥</span>
+          <strong>Member Directory</strong>
+          <span>Discover other engineering leaders</span>
+        </a>
+        <a href="events.html" class="community-link-card">
+          <span class="icon">🗓️</span>
+          <strong>Upcoming Events</strong>
+          <span>See what's on and plan ahead</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SILICON BRIGHTON ========== -->
+  <section class="section silicon-section">
+    <div class="container">
+      <div class="silicon-inner">
+        <div class="silicon-logo">
+          <img src="https://siliconbrighton.com/wp-content/uploads/2022/08/logo.png" alt="Silicon Brighton" />
+        </div>
+        <div class="silicon-content">
+          <span class="badge badge--teal">Network Partner</span>
+          <h2>Part of the Silicon Brighton network</h2>
+          <p>Brighton CTO is proud to be part of Silicon Brighton — the organisation that hosts Brighton &amp; Hove's vibrant tech sector. The Silicon Brighton network brings together a diverse range of community groups, each serving a different corner of the city's technology scene.</p>
+          <div class="silicon-network-chips">
+            <span class="silicon-chip">Brighton CTO</span>
+            <span class="silicon-chip">codebar Brighton</span>
+            <span class="silicon-chip">Brighton Blockchain</span>
+            <span class="silicon-chip">Sussex Data Science</span>
+            <span class="silicon-chip">Learning Futures</span>
+            <span class="silicon-chip">& more</span>
+          </div>
+          <a href="https://siliconbrighton.com/" target="_blank" rel="noopener" class="btn btn--outline" style="border-color:#0e9f96;color:#0e9f96;">
+            Explore the Silicon Brighton network →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ORGANISERS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet the organisers</h2>
+        <p>Brighton CTO is run by a small group of engineering leaders who volunteer their time to build the community.</p>
+      </div>
+      <div class="organiser-grid">
+
+        <div class="organiser-card">
+          <div class="organiser-avatar">
+            <img src="https://www.brightoncto.com/wp-content/uploads/2024/11/1560266129629.jpg" alt="Chris Adams" />
+          </div>
+          <h3>Chris Adams</h3>
+          <p class="role">CPTO</p>
+          <p class="company">Net Natives</p>
+          <a href="https://www.linkedin.com/in/chrisadams/" target="_blank" rel="noopener" class="social-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="organiser-card">
+          <div class="organiser-avatar">
+            <img src="https://www.brightoncto.com/wp-content/uploads/2024/11/ide.jpg" alt="Emmanuel Ide" />
+          </div>
+          <h3>Emmanuel Ide</h3>
+          <p class="role">Head of Engineering</p>
+          <p class="company">Glint</p>
+          <a href="https://www.linkedin.com/in/emmanuelide/" target="_blank" rel="noopener" class="social-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="organiser-card">
+          <div class="organiser-avatar">
+            <img src="https://www.brightoncto.com/wp-content/uploads/2024/11/mf.jpg" alt="Martyn Fagg" />
+          </div>
+          <h3>Martyn Fagg</h3>
+          <p class="role">CIO</p>
+          <p class="company">Tillo</p>
+          <a href="https://www.linkedin.com/in/martynfagg/" target="_blank" rel="noopener" class="social-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== UPCOMING EVENTS PREVIEW ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming events</h2>
+        <p>We meet monthly (ish) in Brighton. All events are free to attend.</p>
+      </div>
+      <div id="home-events-container">
+        <div class="state-box">
+          <div class="icon">⏳</div>
+          <h3>Loading events…</h3>
+          <p>Checking for upcoming meetups.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="events.html" class="btn btn--outline">View all events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to join the community?</h2>
+      <p>Connect with engineering leaders across Brighton &amp; Hove. It's free, it's friendly and it's worth it.</p>
+      <div class="cta-banner__actions">
+        <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary">Join on Meetup</a>
+        <a href="https://brightoncto.slack.com" target="_blank" rel="noopener" class="btn btn--ghost">Join Slack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__brand">
+          <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="footer__logo-img" />
+        </a>
+        <nav class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="members.html">Members</a>
+          <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener">Meetup</a>
+          <a href="https://brightoncto.slack.com" target="_blank" rel="noopener">Slack</a>
+        </nav>
+      </div>
+      <p class="footer__network">Part of the <a href="https://siliconbrighton.com/" target="_blank" rel="noopener">Silicon Brighton</a> network</p>
+      <p class="footer__copy">&copy; <span id="year"></span> Brighton CTO. Community-run. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/events.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Load a small preview of upcoming events on the homepage
+    loadEventsIntoContainer('home-events-container', { limit: 3, compact: false });
+  </script>
+</body>
+</html>

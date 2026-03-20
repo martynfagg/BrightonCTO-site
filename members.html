@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Directory – Brighton CTO</title>
+  <meta name="description" content="Browse the Brighton CTO member directory – engineering leaders from across Brighton & Hove. Add yourself via a GitHub pull request." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f2240'/><text x='16' y='22' text-anchor='middle' fill='%2360a5fa' font-size='16' font-weight='800' font-family='system-ui'>B</text></svg>" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="members.html" class="nav__link active">Members</a></li>
+      </ul>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">
+        Join on Meetup
+      </a>
+      <button class="nav__hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="events.html" class="nav__link">Events</a>
+      <a href="members.html" class="nav__link active">Members</a>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:.5rem;">Join on Meetup</a>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Member Directory</h1>
+      <p>Engineering leaders from across Brighton &amp; Hove. Want to add yourself? It's a simple pull request.</p>
+    </div>
+  </section>
+
+  <!-- ========== MEMBERS ========== -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter / Search -->
+      <div class="members-filter">
+        <input
+          type="search"
+          id="member-search"
+          placeholder="Search by name, company or role…"
+          aria-label="Search members"
+          oninput="filterMembers()"
+        />
+        <select id="member-sort" onchange="filterMembers()" aria-label="Sort members">
+          <option value="name">Sort: Name A–Z</option>
+          <option value="company">Sort: Company</option>
+          <option value="joined">Sort: Recently added</option>
+        </select>
+      </div>
+
+      <p class="member-count" id="member-count"></p>
+
+      <div class="members-grid" id="members-grid">
+        <div class="state-box">
+          <div class="icon">⏳</div>
+          <h3>Loading members…</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW TO ADD YOURSELF ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Add yourself to the directory</h2>
+        <p>The member directory is an open JSON file in our GitHub repository. Adding yourself takes about two minutes via a pull request — no coding required.</p>
+      </div>
+
+      <div class="contribute-steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__content">
+            <h4>Open the file on GitHub</h4>
+            <p>Navigate to <code>data/members.json</code> in the repository and click the edit (pencil) icon.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__content">
+            <h4>Add your entry</h4>
+            <p>Copy an existing entry and update it with your own details — name, role, company, bio and any links.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__content">
+            <h4>Submit a pull request</h4>
+            <p>GitHub will guide you through forking the repo and opening a pull request. We'll review and merge it promptly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <div class="step__content">
+            <h4>You're listed!</h4>
+            <p>Once merged, your profile will appear in the directory automatically. No build step needed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem;text-align:center;">
+        <a href="https://github.com/brightoncto/brightoncto.github.io/edit/main/data/members.json"
+           target="_blank" rel="noopener"
+           class="btn btn--primary">
+          ✏️ Edit members.json on GitHub
+        </a>
+        <a href="https://github.com/brightoncto/brightoncto.github.io/blob/main/CONTRIBUTING.md"
+           target="_blank" rel="noopener"
+           class="btn btn--outline"
+           style="margin-left:.75rem;">
+          Read the guide
+        </a>
+      </div>
+
+      <div style="margin-top:2.5rem;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:1.5rem;">
+        <h3 style="margin-bottom:1rem;font-size:1rem;">Example entry format</h3>
+        <pre style="font-size:.82rem;line-height:1.7;overflow-x:auto;color:var(--color-text);"><code>{
+  "name": "Your Name",
+  "role": "CTO",
+  "company": "Your Company",
+  "bio": "A sentence or two about you and your work.",
+  "tags": ["Leadership", "Platform Engineering", "SaaS"],
+  "linkedin": "https://linkedin.com/in/yourhandle",
+  "website": "https://yoursite.com",
+  "github": "https://github.com/yourhandle",
+  "avatar": "",
+  "joined": "2025-01"
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__brand">
+          <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="footer__logo-img" />
+        </a>
+        <nav class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="members.html">Members</a>
+          <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener">Meetup</a>
+          <a href="https://brightoncto.slack.com" target="_blank" rel="noopener">Slack</a>
+        </nav>
+      </div>
+      <p class="footer__network">Part of the <a href="https://siliconbrighton.com/" target="_blank" rel="noopener">Silicon Brighton</a> network</p>
+      <p class="footer__copy">&copy; <span id="year"></span> Brighton CTO. Community-run. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/members.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    initMembersPage();
+  </script>
+</body>
+</html>

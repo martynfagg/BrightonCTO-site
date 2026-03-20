@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – Brighton CTO</title>
+  <meta name="description" content="Upcoming and past Brighton CTO meetup events. Free for engineering leaders in Brighton & Hove." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f2240'/><text x='16' y='22' text-anchor='middle' fill='%2360a5fa' font-size='16' font-weight='800' font-family='system-ui'>B</text></svg>" />
+  <style>
+    .events-tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 0;
+    }
+    .events-tab {
+      padding: .65rem 1.25rem;
+      font-size: .9rem;
+      font-weight: 600;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--color-muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color .15s, border-color .15s;
+      font-family: inherit;
+    }
+    .events-tab:hover { color: var(--color-accent); }
+    .events-tab.active {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+    }
+    .calendar-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 2rem;
+    }
+    .calendar-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .45rem .9rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: .82rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      background: var(--color-bg);
+      transition: border-color .15s, color .15s;
+    }
+    .calendar-links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="events.html" class="nav__link active">Events</a></li>
+        <li><a href="members.html" class="nav__link">Members</a></li>
+      </ul>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">
+        Join on Meetup
+      </a>
+      <button class="nav__hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="events.html" class="nav__link active">Events</a>
+      <a href="members.html" class="nav__link">Members</a>
+      <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:.5rem;">Join on Meetup</a>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Events</h1>
+      <p>We gather monthly (ish) in Brighton for talks, discussions and a drink. All events are free to attend.</p>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS ========== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="events-tabs">
+        <button class="events-tab active" onclick="switchTab('upcoming', this)">Upcoming</button>
+        <button class="events-tab" onclick="switchTab('past', this)">Past Events</button>
+      </div>
+
+      <div id="events-container">
+        <div class="state-box">
+          <div class="icon">⏳</div>
+          <h3>Loading events…</h3>
+          <p>Fetching the latest from Meetup.com.</p>
+        </div>
+      </div>
+
+      <div class="calendar-links">
+        <span style="font-size:.82rem;color:var(--color-muted);display:flex;align-items:center;">Subscribe to calendar:</span>
+        <a href="https://www.meetup.com/Brighton-CTO-Meetup/events/ical/" target="_blank" rel="noopener">
+          📅 iCal / Apple Calendar
+        </a>
+        <a href="https://calendar.google.com/calendar/r?cid=https://www.meetup.com/Brighton-CTO-Meetup/events/ical/" target="_blank" rel="noopener">
+          📅 Google Calendar
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Never miss a meetup</h2>
+      <p>Join the group on Meetup.com to get notified about new events and RSVP with one click.</p>
+      <div class="cta-banner__actions">
+        <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener" class="btn btn--primary">Join the Meetup group</a>
+        <a href="https://brightoncto.slack.com" target="_blank" rel="noopener" class="btn btn--ghost">Join Slack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="index.html" class="footer__brand">
+          <img src="https://www.brightoncto.com/wp-content/uploads/2025/01/cropped-Brighton-CTO-3.png" alt="Brighton CTO" class="footer__logo-img" />
+        </a>
+        <nav class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="members.html">Members</a>
+          <a href="https://www.meetup.com/Brighton-CTO-Meetup/" target="_blank" rel="noopener">Meetup</a>
+          <a href="https://brightoncto.slack.com" target="_blank" rel="noopener">Slack</a>
+        </nav>
+      </div>
+      <p class="footer__network">Part of the <a href="https://siliconbrighton.com/" target="_blank" rel="noopener">Silicon Brighton</a> network</p>
+      <p class="footer__copy">&copy; <span id="year"></span> Brighton CTO. Community-run. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/events.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    let currentTab = 'upcoming';
+
+    function switchTab(tab, el) {
+      currentTab = tab;
+      document.querySelectorAll('.events-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      loadEventsIntoContainer('events-container', { status: tab, limit: 20 });
+    }
+
+    // Initial load
+    loadEventsIntoContainer('events-container', { status: 'upcoming', limit: 20 });
+  </script>
+</body>
+</html>
