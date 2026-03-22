@@ -29,7 +29,7 @@ jobs:
 
       - name: Fetch events from Meetup
         env:
-          MEETUP_GROUP: Brighton-CTO-Meetup
+          MEETUP_GROUP: brighton-cto
           # Optional: set MEETUP_API_KEY in repository secrets if you have one
           MEETUP_API_KEY: ${{ secrets.MEETUP_API_KEY }}
         run: |
