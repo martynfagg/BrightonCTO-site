@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 175" fill="none" role="img" aria-label="Brighton CTO">
+  <defs>
+    <clipPath id="ct"><circle cx="90" cy="35" r="27"/></clipPath>
+    <clipPath id="cbl"><circle cx="35" cy="140" r="27"/></clipPath>
+    <clipPath id="cbr"><circle cx="145" cy="140" r="27"/></clipPath>
+  </defs>
+
+  <!-- Dashed connecting arcs -->
+  <path d="M 103 59 Q 163 64 133 116" stroke="#3DC8C8" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
+  <path d="M 118 140 Q 90 178 62 140" stroke="#3DC8C8" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
+  <path d="M 47 116 Q 17 64 77 59" stroke="#3DC8C8" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
+
+  <!-- Top person circle -->
+  <circle cx="90" cy="35" r="27" fill="#3DC8C8"/>
+  <circle cx="90" cy="27" r="8" fill="white" clip-path="url(#ct)"/>
+  <ellipse cx="90" cy="48" rx="18" ry="13" fill="white" clip-path="url(#ct)"/>
+
+  <!-- Bottom-left person circle -->
+  <circle cx="35" cy="140" r="27" fill="#3DC8C8"/>
+  <circle cx="35" cy="132" r="8" fill="white" clip-path="url(#cbl)"/>
+  <ellipse cx="35" cy="153" rx="18" ry="13" fill="white" clip-path="url(#cbl)"/>
+
+  <!-- Bottom-right person circle -->
+  <circle cx="145" cy="140" r="27" fill="#3DC8C8"/>
+  <circle cx="145" cy="132" r="8" fill="white" clip-path="url(#cbr)"/>
+  <ellipse cx="145" cy="153" rx="18" ry="13" fill="white" clip-path="url(#cbr)"/>
+</svg>
