@@ -1,161 +1,160 @@
 /**
  * fetch-events.js
  *
- * Fetches upcoming and past events from the Meetup.com API and writes
+ * Scrapes upcoming and past events from the Meetup.com website and writes
  * them to data/events.json.
  *
  * Run via GitHub Actions (see .github/workflows/fetch-events.yml).
  *
- * Meetup API docs: https://www.meetup.com/api/guide/
- *
- * Authentication:
- *   - If you have a Meetup API key, set it as the MEETUP_API_KEY secret
- *     in your GitHub repository settings.
- *   - For public groups the REST v3 API often works without authentication
- *     when called server-side (from GitHub Actions), but Meetup may require
- *     OAuth for some endpoints. The script handles both cases gracefully.
+ * Meetup embeds event data as an Apollo GraphQL cache object in each page's
+ * HTML — this script extracts and parses that embedded JSON rather than
+ * calling the (now-authenticated-only) REST/GraphQL API.
  */
 
-const https  = require('https');
-const fs     = require('fs');
-const path   = require('path');
+const https = require('https');
+const fs    = require('fs');
+const path  = require('path');
 
-const GROUP   = process.env.MEETUP_GROUP || 'Brighton-CTO-Meetup';
-const API_KEY = process.env.MEETUP_API_KEY || '';
-const OUT     = path.join(__dirname, '..', 'data', 'events.json');
+const GROUP = process.env.MEETUP_GROUP || 'brighton-cto';
+const OUT   = path.join(__dirname, '..', 'data', 'events.json');
 
 // ------------------------------------------------------------------ //
-//  Helpers
+//  HTTP helper — returns raw HTML string
 // ------------------------------------------------------------------ //
 
-function httpsGet(url, headers = {}) {
+function httpsGetHtml(url, redirectDepth = 0) {
+  if (redirectDepth > 5) return Promise.reject(new Error('Too many redirects'));
   return new Promise((resolve, reject) => {
     const opts = new URL(url);
-    const reqHeaders = {
-      'User-Agent': 'BrightonCTO-StaticSite/1.0 (https://brightoncto.com)',
-      ...headers,
-    };
-    if (API_KEY) reqHeaders['Authorization'] = `Bearer ${API_KEY}`;
-
-    const req = https.get({ hostname: opts.hostname, path: opts.pathname + opts.search, headers: reqHeaders }, res => {
+    const req = https.get({
+      hostname: opts.hostname,
+      path:     opts.pathname + opts.search,
+      headers: {
+        'User-Agent':      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept':          'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-GB,en;q=0.9',
+        'Accept-Encoding': 'identity',
+      },
+    }, res => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        const next = res.headers.location.startsWith('http')
+          ? res.headers.location
+          : `https://${opts.hostname}${res.headers.location}`;
+        res.resume();
+        return httpsGetHtml(next, redirectDepth + 1).then(resolve).catch(reject);
+      }
       let body = '';
-      res.on('data', chunk => body += chunk);
+      res.on('data', chunk => (body += chunk));
       res.on('end', () => {
         if (res.statusCode >= 200 && res.statusCode < 300) {
-          try { resolve(JSON.parse(body)); }
-          catch (e) { reject(new Error(`JSON parse error: ${e.message}\nBody: ${body.slice(0, 200)}`)); }
+          resolve(body);
         } else {
-          reject(new Error(`HTTP ${res.statusCode} for ${url}\nBody: ${body.slice(0, 200)}`));
+          reject(new Error(`HTTP ${res.statusCode} for ${url}\nBody: ${body.slice(0, 300)}`));
         }
       });
     });
     req.on('error', reject);
-    req.setTimeout(15000, () => { req.destroy(); reject(new Error('Request timed out')); });
+    req.setTimeout(25000, () => { req.destroy(); reject(new Error(`Timeout fetching ${url}`)); });
   });
 }
 
-function normaliseEvent(ev, status) {
-  // Handle both REST v3 shape and GraphQL shape
-  const venue = ev.venue || {};
+// ------------------------------------------------------------------ //
+//  Extract Apollo state from page HTML
+// ------------------------------------------------------------------ //
+
+function extractApolloState(html) {
+  // Strategy 1: window.__APOLLO_STATE__ = {...};
+  let match = html.match(/window\.__APOLLO_STATE__\s*=\s*(\{[\s\S]*?\});\s*<\/script>/);
+  if (match) {
+    try { return JSON.parse(match[1]); } catch (_) {}
+  }
+
+  // Strategy 2: __NEXT_DATA__ script tag (Next.js pages)
+  // Apollo state is stored under props.pageProps.__APOLLO_STATE__
+  match = html.match(/<script[^>]+id=["']__NEXT_DATA__["'][^>]*>([\s\S]*?)<\/script>/);
+  if (match) {
+    try {
+      const nextData = JSON.parse(match[1]);
+      return nextData?.props?.pageProps?.['__APOLLO_STATE__']
+        || nextData?.props?.['__APOLLO_STATE__']
+        || null;
+    } catch (_) {}
+  }
+
+  return null;
+}
+
+// ------------------------------------------------------------------ //
+//  Dereference Apollo cache refs
+// ------------------------------------------------------------------ //
+
+function deref(value, cache) {
+  if (!value || typeof value !== 'object') return value;
+  if (value.__ref) return cache[value.__ref] || null;
+  return value;
+}
+
+// ------------------------------------------------------------------ //
+//  Normalise a raw Apollo Event object into our schema
+// ------------------------------------------------------------------ //
+
+function normaliseEvent(raw, cache, status) {
+  const venue = deref(raw.venue, cache) || {};
+  const going = deref(raw.going, cache) || {};
+
+  // title field name varies between Apollo cache shapes
+  const name = raw.name || raw.title || '';
+
+  // Build a clean description: strip HTML tags and trim whitespace
+  const rawDesc = raw.description || raw.shortDescription || '';
+  const description = rawDesc.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
   return {
-    id:          ev.id || ev.eventUrl || '',
-    name:        ev.name || '',
-    date:        ev.time
-                   ? new Date(ev.time).toISOString()          // REST v3: Unix ms
-                   : (ev.dateTime || ev.local_date || ''),    // GraphQL / fallback
-    duration:    ev.duration || null,
-    status:      status,
-    description: ev.description || ev.shortDescription || '',
-    link:        ev.link || ev.eventUrl || `https://www.meetup.com/${GROUP}/events/${ev.id}/`,
-    rsvp_count:  ev.yes_rsvp_count ?? ev.going?.totalCount ?? null,
+    id:          raw.id || '',
+    name,
+    date:        raw.dateTime || raw.local_date || '',
+    duration:    raw.duration || null,
+    status,
+    description,
+    link:        raw.eventUrl || `https://www.meetup.com/${GROUP}/events/${raw.id}/`,
+    rsvp_count:  going.totalCount ?? null,
     venue: venue.name
       ? {
           name:    venue.name,
-          address: [venue.address_1, venue.city].filter(Boolean).join(', '),
-          lat:     venue.lat,
-          lon:     venue.lon,
+          address: venue.address || [venue.address_1, venue.city].filter(Boolean).join(', '),
         }
       : null,
-    location: ev.venue?.name || '',
+    location: venue.name || '',
   };
 }
 
 // ------------------------------------------------------------------ //
-//  Fetch via Meetup REST API v3 (no auth needed for public groups)
+//  Pull events out of an Apollo cache object
 // ------------------------------------------------------------------ //
 
-async function fetchViaRestAPI() {
-  const base = `https://api.meetup.com/${GROUP}/events`;
+function extractEvents(state) {
+  if (!state) return { upcoming: [], past: [] };
 
-  const [upcomingRaw, pastRaw] = await Promise.all([
-    httpsGet(`${base}?photo-host=public&page=20&status=upcoming`),
-    httpsGet(`${base}?photo-host=public&page=20&status=past&desc=true`),
-  ]);
+  const upcoming = [];
+  const past     = [];
 
-  const upcoming = (Array.isArray(upcomingRaw) ? upcomingRaw : []).map(e => normaliseEvent(e, 'upcoming'));
-  const past     = (Array.isArray(pastRaw)     ? pastRaw     : []).map(e => normaliseEvent(e, 'past'));
+  for (const [key, value] of Object.entries(state)) {
+    if (!key.startsWith('Event:') || !value || typeof value !== 'object') continue;
 
-  return { upcoming, past };
-}
+    // Skip __typename-only stubs
+    if (!value.id && !value.eventUrl) continue;
 
-// ------------------------------------------------------------------ //
-//  Fetch via Meetup GraphQL API (requires OAuth token in API_KEY)
-// ------------------------------------------------------------------ //
+    const rawStatus = (value.status || '').toUpperCase();
+    if (rawStatus === 'PAST') {
+      past.push(normaliseEvent(value, state, 'past'));
+    } else {
+      // ACTIVE, UPCOMING, or unset → treat as upcoming
+      upcoming.push(normaliseEvent(value, state, 'upcoming'));
+    }
+  }
 
-async function fetchViaGraphQL() {
-  const query = `
-    query($urlname: String!) {
-      groupByUrlname(urlname: $urlname) {
-        upcomingEvents(input: { first: 20 }) {
-          edges { node {
-            id title dateTime shortDescription eventUrl
-            going { totalCount }
-            venue { name address }
-          }}
-        }
-        pastEvents(input: { first: 20, reverse: true }) {
-          edges { node {
-            id title dateTime shortDescription eventUrl
-            going { totalCount }
-            venue { name address }
-          }}
-        }
-      }
-    }`;
-
-  const body = JSON.stringify({ query, variables: { urlname: GROUP } });
-
-  const data = await new Promise((resolve, reject) => {
-    const req = https.request({
-      hostname: 'api.meetup.com',
-      path:     '/gql',
-      method:   'POST',
-      headers:  {
-        'Content-Type':   'application/json',
-        'Content-Length': Buffer.byteLength(body),
-        'User-Agent':     'BrightonCTO-StaticSite/1.0',
-        ...(API_KEY ? { Authorization: `Bearer ${API_KEY}` } : {}),
-      },
-    }, res => {
-      let raw = '';
-      res.on('data', c => raw += c);
-      res.on('end', () => {
-        try { resolve(JSON.parse(raw)); }
-        catch (e) { reject(new Error(`GraphQL parse error: ${e.message}`)); }
-      });
-    });
-    req.on('error', reject);
-    req.write(body);
-    req.end();
-  });
-
-  const group = data?.data?.groupByUrlname;
-  if (!group) throw new Error('GraphQL: no group data returned');
-
-  const upcoming = (group.upcomingEvents?.edges || [])
-    .map(e => normaliseEvent({ ...e.node, name: e.node.title }, 'upcoming'));
-  const past = (group.pastEvents?.edges || [])
-    .map(e => normaliseEvent({ ...e.node, name: e.node.title }, 'past'));
+  upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+  past.sort((a, b)     => new Date(b.date) - new Date(a.date));
 
   return { upcoming, past };
 }
@@ -165,31 +164,33 @@ async function fetchViaGraphQL() {
 // ------------------------------------------------------------------ //
 
 (async () => {
-  let result;
+  console.log(`Scraping Meetup.com for group: ${GROUP}`);
 
-  // Try GraphQL first if we have an API key; otherwise use REST
-  if (API_KEY) {
-    console.log('Using Meetup GraphQL API (authenticated)…');
-    try {
-      result = await fetchViaGraphQL();
-    } catch (err) {
-      console.warn('GraphQL failed, falling back to REST API:', err.message);
-      result = await fetchViaRestAPI();
-    }
-  } else {
-    console.log('No MEETUP_API_KEY set – using public REST API…');
-    result = await fetchViaRestAPI();
-  }
+  // Fetch upcoming and past pages in parallel
+  const [upcomingHtml, pastHtml] = await Promise.all([
+    httpsGetHtml(`https://www.meetup.com/${GROUP}/events/`),
+    httpsGetHtml(`https://www.meetup.com/${GROUP}/events/?type=past`),
+  ]);
+
+  const upcomingState = extractApolloState(upcomingHtml);
+  const pastState     = extractApolloState(pastHtml);
+
+  if (!upcomingState) console.warn('⚠️  Could not extract Apollo state from upcoming page');
+  if (!pastState)     console.warn('⚠️  Could not extract Apollo state from past page');
+
+  const { upcoming }       = extractEvents(upcomingState);
+  const { past: pastList } = extractEvents(pastState);
 
   const output = {
+    _comment: 'This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.',
     _updated: new Date().toISOString(),
-    upcoming: result.upcoming,
-    past:     result.past,
+    upcoming,
+    past: pastList,
   };
 
   fs.writeFileSync(OUT, JSON.stringify(output, null, 2));
 
-  console.log(`✅ events.json updated — ${result.upcoming.length} upcoming, ${result.past.length} past`);
+  console.log(`✅ events.json updated — ${upcoming.length} upcoming, ${pastList.length} past`);
 })().catch(err => {
   console.error('❌ fetch-events failed:', err.message);
   // Don't overwrite with empty data on failure — leave existing file intact
