@@ -1,7 +1,22 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-04-20T13:38:35.707Z",
+  "_updated": "2026-04-20T20:02:49.597Z",
   "upcoming": [
+    {
+      "id": "314379807",
+      "name": "April Meetup",
+      "date": "2026-04-29T18:30:00+01:00",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314379807/",
+      "rsvp_count": 4,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
     {
       "id": "313340151",
       "name": "EVOLVE [26]: Shaping Tomorrow",
