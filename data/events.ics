@@ -1,0 +1,58 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BrightonCTO//Events Feed//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:BrightonCTO Events
+X-WR-CALDESC:Meetups and events for the BrightonCTO community
+BEGIN:VEVENT
+UID:314379807@brightoncto.com
+DTSTAMP:20260420T201521Z
+DTSTART:20260429T173000Z
+DTEND:20260429T193000Z
+SUMMARY:April Meetup
+DESCRIPTION:Come along to talk about common challenges in running a technol
+ ogy function.
+LOCATION:The Walrus Pub\, 10 Ship Street
+URL:https://www.meetup.com/brighton-cto/events/314379807/
+END:VEVENT
+BEGIN:VEVENT
+UID:313340151@brightoncto.com
+DTSTAMP:20260420T201521Z
+DTSTART:20260626T070000Z
+DTEND:20260626T090000Z
+SUMMARY:EVOLVE [26]: Shaping Tomorrow
+DESCRIPTION:**The meetup of all meetups is back!** 🎟️ Buy your tickets
+  here: [https://ticketpass.org/event/ESVWOM/evolve-26-27](https://ticketpa
+ ss.org/event/ESVWOM/evolve-26-27) **50% discount code for the BrightonCTO 
+ community: *BRIGHTONCTO*** \\* (Please note\, clicking "Attend" via Meetup
+  does not confirm your attendance – you need to buy your ticket via the 
+ TicketPass link above) \\-\\-\\-\\-\\- // \\-\\-\\-\\-\\- EVOLVE [26]: Sha
+ ping Tomorrow is a one-day event in Brighton that brings together the brig
+ htest minds in technology\, business\, and education. Join us for a day of
+  discovery\, connect with top employers\, explore ground-breaking technolo
+ gies\, and learn how tech can transform industries and enrich lives. ***Ex
+ hibitions*** Explore the future of tech at our innovation showcase. Dive i
+ nto cutting-edge solutions as companies reveal their latest tech breakthro
+ ughs\, inspiring ideas\, and career opportunities. ***Keynotes & Panels***
+  Keynotes from tech's leading minds. Hear from industry trailblazers and t
+ hought leaders as they explore the future of technology\, social impact\, 
+ and business transformation. ***Meetup sessions that drive innovation*** J
+ oin passionate developers\, data scientists\, and designers for interactiv
+ e sessions on the latest trends in tech\, from AI to UX and everything in 
+ between. ***Workshops*** Skill up\, innovate\, and excel: hands-on worksho
+ ps. Gain practical expertise in coding\, cybersecurity\, and product desig
+ n\, or polish your career skills with focused workshops led by industry pr
+ os. ***Hackathon*** Hack the future: Real-time innovation in our coding ch
+ allenge. Compete to solve real-world problems with code and creativity in 
+ an exciting hackathon\, with rewards for the best teams and ideas. **Get y
+ our EVOLVE [26] ticket today!** * Get 50% off the ticket price via the Bri
+ ghtonCTO community by using this discount code: *BRIGHTONCTO* * Get your t
+ icket here: [https://ticketpass.org/event/ESVWOM/evolve-26-27](https://tic
+ ketpass.org/event/ESVWOM/evolve-26-27) **Find out more about EVOLVE on the
+  official website:** \\*[evolve.siliconbrighton.com](http://evolve.silicon
+ brighton.com/)
+LOCATION:Brighton Centre\, Kings Road\,  BN1 2GR
+URL:https://www.meetup.com/brighton-cto/events/313340151/
+END:VEVENT
+END:VCALENDAR
