@@ -89,4 +89,4 @@ git push origin add-yourname
 
 ## Questions?
 
-Open an [issue](https://github.com/brightoncto/brightoncto.github.io/issues) or ask in [Slack](https://brightoncto.slack.com).
+Open an [issue](https://github.com/brightoncto/brightoncto.github.io/issues).
