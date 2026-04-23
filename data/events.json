@@ -1,7 +1,22 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-04-22T19:56:51.644Z",
+  "_updated": "2026-04-23T07:56:56.746Z",
   "upcoming": [
+    {
+      "id": "314424272",
+      "name": "September Meetup",
+      "date": "2026-04-23T18:30:00+01:00",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424272/",
+      "rsvp_count": 1,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
     {
       "id": "314379807",
       "name": "April Meetup",
@@ -41,8 +56,11 @@
       "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
       "link": "https://www.meetup.com/brighton-cto/events/314424182/",
       "rsvp_count": 1,
-      "venue": null,
-      "location": ""
+      "venue": {
+        "name": "Petanque Club",
+        "address": "150 King's Rd, Hove BN1 2, United Kingdom"
+      },
+      "location": "Petanque Club"
     },
     {
       "id": "313340151",
@@ -58,6 +76,66 @@
         "address": "Kings Road,  BN1 2GR"
       },
       "location": "Brighton Centre"
+    },
+    {
+      "id": "314424269",
+      "name": "July Meetup - CTO Roundtable",
+      "date": "2026-07-21T18:30:00+01:00",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424269/",
+      "rsvp_count": 1,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
+    {
+      "id": "314424285",
+      "name": "October - Fireside chat",
+      "date": "2026-10-20T18:30:00+01:00",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424285/",
+      "rsvp_count": 1,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
+    {
+      "id": "314424313",
+      "name": "November Meetup",
+      "date": "2026-11-18T18:30:00Z",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424313/",
+      "rsvp_count": 1,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
+    {
+      "id": "314424362",
+      "name": "Christmas CTOs",
+      "date": "2026-12-08T18:30:00Z",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424362/",
+      "rsvp_count": 1,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
     }
   ],
   "past": []
