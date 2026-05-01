@@ -728,11 +728,7 @@ p:last-child { margin-bottom: 0; }
 .member-card__bio {
   font-size: .85rem;
   color: var(--color-muted);
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.55;
 }
 .member-card__tags {
   display: flex;
