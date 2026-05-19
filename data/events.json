@@ -1,16 +1,16 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-05-18T10:06:29.936Z",
+  "_updated": "2026-05-19T09:46:59.288Z",
   "upcoming": [
     {
       "id": "314423602",
       "name": "May Meetup",
-      "date": "2026-05-19T18:30:00+01:00",
+      "date": "2026-05-26T18:30:00+01:00",
       "duration": null,
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314423602/",
-      "rsvp_count": 6,
+      "rsvp_count": 7,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
@@ -25,7 +25,7 @@
       "status": "upcoming",
       "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
       "link": "https://www.meetup.com/brighton-cto/events/314424182/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "Petanque Club",
         "address": "150 King's Rd, Hove BN1 2, United Kingdom"
@@ -55,7 +55,7 @@
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314424269/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
@@ -70,7 +70,7 @@
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314655202/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
@@ -85,7 +85,7 @@
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314424285/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
@@ -100,7 +100,7 @@
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314424313/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
