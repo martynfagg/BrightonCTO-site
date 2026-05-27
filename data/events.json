@@ -1,22 +1,7 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-05-26T09:58:21.921Z",
+  "_updated": "2026-05-27T09:52:57.795Z",
   "upcoming": [
-    {
-      "id": "314423602",
-      "name": "May Meetup",
-      "date": "2026-05-26T18:30:00+01:00",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Come along to talk about common challenges in running a technology function.",
-      "link": "https://www.meetup.com/brighton-cto/events/314423602/",
-      "rsvp_count": 10,
-      "venue": {
-        "name": "The Walrus Pub",
-        "address": "10 Ship Street"
-      },
-      "location": "The Walrus Pub"
-    },
     {
       "id": "314959281",
       "name": "May Meetup",
@@ -139,6 +124,21 @@
     }
   ],
   "past": [
+    {
+      "id": "314423602",
+      "name": "May Meetup",
+      "date": "2026-05-26T18:30:00+01:00",
+      "duration": null,
+      "status": "past",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314423602/",
+      "rsvp_count": 9,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
     {
       "id": "314379807",
       "name": "April Meetup",
