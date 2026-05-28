@@ -1,22 +1,7 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-05-27T09:52:57.795Z",
+  "_updated": "2026-05-28T10:04:27.858Z",
   "upcoming": [
-    {
-      "id": "314959281",
-      "name": "May Meetup",
-      "date": "2026-05-27T18:30:00+01:00",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Come along to talk about common challenges in running a technology function.",
-      "link": "https://www.meetup.com/brighton-cto/events/314959281/",
-      "rsvp_count": 2,
-      "venue": {
-        "name": "The Walrus Pub",
-        "address": "10 Ship Street"
-      },
-      "location": "The Walrus Pub"
-    },
     {
       "id": "314424182",
       "name": "Brighton CTO does Pétanque",
@@ -25,7 +10,7 @@
       "status": "upcoming",
       "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
       "link": "https://www.meetup.com/brighton-cto/events/314424182/",
-      "rsvp_count": 2,
+      "rsvp_count": 3,
       "venue": {
         "name": "Petanque Club",
         "address": "150 King's Rd, Hove BN1 2, United Kingdom"
