@@ -1,6 +1,6 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-06-03T11:01:13.776Z",
+  "_updated": "2026-06-04T09:57:00.484Z",
   "upcoming": [
     {
       "id": "314424182",
@@ -10,7 +10,7 @@
       "status": "upcoming",
       "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
       "link": "https://www.meetup.com/brighton-cto/events/314424182/",
-      "rsvp_count": 3,
+      "rsvp_count": 4,
       "venue": {
         "name": "Petanque Club",
         "address": "150 King's Rd, Hove BN1 2, United Kingdom"
@@ -40,7 +40,7 @@
       "status": "upcoming",
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314424269/",
-      "rsvp_count": 2,
+      "rsvp_count": 3,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
