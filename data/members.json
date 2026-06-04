@@ -34,5 +34,17 @@
     "github": "",
     "avatar": "images/members/martyn-fagg.jpeg",
     "joined": "2020-01"
+  },
+  {
+    "name": "Glen De Cauwsemaecker",
+    "role": "CTO",
+    "company": "Plabayo",
+    "bio": "Glen is CTO at Plabayo, building Rama, an actively maintained open source Rust network framework.",
+    "tags": ["Leadership", "Networking", "Open Source", "Security"],
+    "linkedin": "https://www.linkedin.com/in/glendc/",
+    "website": "https://www.glendc.com/",
+    "github": "https://github.com/glendc",
+    "avatar": "images/members/glen-de-cauwsemaecker.jpg",
+    "joined": "2026-06"
   }
 ]
