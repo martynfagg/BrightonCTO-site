@@ -1,6 +1,6 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-06-11T10:27:03.650Z",
+  "_updated": "2026-06-12T10:14:54.438Z",
   "upcoming": [
     {
       "id": "314424182",
@@ -25,7 +25,7 @@
       "status": "upcoming",
       "description": "As the name implies, PREVOLVE is our pre-EVOLVE relaxed party for our community to get together the evening before the big conference day! Catch up with fellow members of your favourite meetup group and meet some new faces. Everyone's welcome, from meetup group organisers and members to EVOLVE [26] attendees, speakers, partners, exhibitors, volunteers. 🗓️ Thursday 25th June (6pm-8pm) 📍 The Walrus, Brighton 🧑‍🦰 No dress code - wear whatever you want! 💃 We hope to see you there!",
       "link": "https://www.meetup.com/brighton-cto/events/315183665/",
-      "rsvp_count": 1,
+      "rsvp_count": 2,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
