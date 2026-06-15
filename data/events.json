@@ -1,6 +1,6 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-06-14T09:36:11.775Z",
+  "_updated": "2026-06-15T12:16:58.300Z",
   "upcoming": [
     {
       "id": "314424182",
@@ -10,7 +10,7 @@
       "status": "upcoming",
       "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
       "link": "https://www.meetup.com/brighton-cto/events/314424182/",
-      "rsvp_count": 5,
+      "rsvp_count": 6,
       "venue": {
         "name": "Petanque Club",
         "address": "150 King's Rd, Hove BN1 2, United Kingdom"
