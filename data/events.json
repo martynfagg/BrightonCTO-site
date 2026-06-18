@@ -1,22 +1,7 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-06-17T10:58:05.292Z",
+  "_updated": "2026-06-18T10:22:00.860Z",
   "upcoming": [
-    {
-      "id": "314424182",
-      "name": "Brighton CTO does Pétanque",
-      "date": "2026-06-17T18:00:00+01:00",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
-      "link": "https://www.meetup.com/brighton-cto/events/314424182/",
-      "rsvp_count": 6,
-      "venue": {
-        "name": "Petanque Club",
-        "address": "150 King's Rd, Hove BN1 2, United Kingdom"
-      },
-      "location": "Petanque Club"
-    },
     {
       "id": "315183665",
       "name": "PREVOLVE Party",
@@ -124,6 +109,21 @@
     }
   ],
   "past": [
+    {
+      "id": "314424182",
+      "name": "Brighton CTO does Pétanque",
+      "date": "2026-06-17T18:00:00+01:00",
+      "duration": null,
+      "status": "past",
+      "description": "Join us for something different - Emmanuelle is going to lead us in a game of Pétanque and may bring along a traditional pastis for those that fancy it.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424182/",
+      "rsvp_count": 6,
+      "venue": {
+        "name": "Petanque Club",
+        "address": "150 King's Rd, Hove BN1 2, United Kingdom"
+      },
+      "location": "Petanque Club"
+    },
     {
       "id": "314423602",
       "name": "May Meetup",
