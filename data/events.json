@@ -1,22 +1,7 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-07-21T08:29:57.307Z",
+  "_updated": "2026-07-22T08:30:01.438Z",
   "upcoming": [
-    {
-      "id": "314424269",
-      "name": "July Meetup - CTO Roundtable",
-      "date": "2026-07-21T18:30:00+01:00",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Come along to talk about common challenges in running a technology function.",
-      "link": "https://www.meetup.com/brighton-cto/events/314424269/",
-      "rsvp_count": 15,
-      "venue": {
-        "name": "The Walrus Pub",
-        "address": "10 Ship Street"
-      },
-      "location": "The Walrus Pub"
-    },
     {
       "id": "314655202",
       "name": "September Meetup",
@@ -79,6 +64,21 @@
     }
   ],
   "past": [
+    {
+      "id": "314424269",
+      "name": "July Meetup - CTO Roundtable",
+      "date": "2026-07-21T18:30:00+01:00",
+      "duration": null,
+      "status": "past",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424269/",
+      "rsvp_count": 13,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
     {
       "id": "313340151",
       "name": "EVOLVE [26]: Shaping Tomorrow",
