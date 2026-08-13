@@ -1,6 +1,6 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-08-12T07:25:16.349Z",
+  "_updated": "2026-08-13T07:27:06.838Z",
   "upcoming": [
     {
       "id": "314655202",
@@ -10,7 +10,7 @@
       "status": "upcoming",
       "description": "For this month's Brighton CTO Meetup we are recreating the roundtable format that we used at the [Silicon Brighton Evolve Conference](https://evolve.siliconbrighton.com/). Rather than meeting in our usual spot, The Walrus, we are kindly being hosted for free by [Runway East](https://www.runwayea.st/office-spaces-locations/brighton) so that we can have a group conversation more easily. Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314655202/",
-      "rsvp_count": 3,
+      "rsvp_count": 4,
       "venue": {
         "name": "Runway East",
         "address": "Runway East, York And Elder Works, 50 New England St, Brighton, BN1 4AW"
