@@ -1,22 +1,7 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-10-20T11:01:27.373Z",
+  "_updated": "2026-10-21T11:18:31.839Z",
   "upcoming": [
-    {
-      "id": "314424285",
-      "name": "Brighton CTO October Meetup",
-      "date": "2026-10-20T18:30:00+01:00",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Come along to talk about common challenges in running a technology function.",
-      "link": "https://www.meetup.com/brighton-cto/events/314424285/",
-      "rsvp_count": 15,
-      "venue": {
-        "name": "The Walrus Pub",
-        "address": "10 Ship Street"
-      },
-      "location": "The Walrus Pub"
-    },
     {
       "id": "314424313",
       "name": "Brighton CTO November Round Table",
@@ -49,6 +34,21 @@
     }
   ],
   "past": [
+    {
+      "id": "314424285",
+      "name": "Brighton CTO October Meetup",
+      "date": "2026-10-20T18:30:00+01:00",
+      "duration": null,
+      "status": "past",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424285/",
+      "rsvp_count": 16,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
     {
       "id": "314655202",
       "name": "September Meetup - Roundtable",
