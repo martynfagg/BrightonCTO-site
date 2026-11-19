@@ -1,13 +1,30 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-11-18T15:13:58.109Z",
+  "_updated": "2026-11-19T15:21:41.487Z",
   "upcoming": [
+    {
+      "id": "314424362",
+      "name": "Christmas CTOs",
+      "date": "2026-12-08T18:30:00Z",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/314424362/",
+      "rsvp_count": 4,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    }
+  ],
+  "past": [
     {
       "id": "314424313",
       "name": "Brighton CTO November Round Table",
       "date": "2026-11-18T18:30:00Z",
       "duration": null,
-      "status": "upcoming",
+      "status": "past",
       "description": "For this month's Brighton CTO Meetup we are recreating the roundtable format that we used at the [Silicon Brighton Evolve Conference](https://evolve.siliconbrighton.com/). Rather than meeting in our usual spot, The Walrus, we are kindly being hosted for free by [Runway East](https://www.runwayea.st/office-spaces-locations/brighton) so that we can have a group conversation more easily. Come along to talk about common challenges in running a technology function. We may then head to The Lord Nelson after the roundtable session ends.",
       "link": "https://www.meetup.com/brighton-cto/events/314424313/",
       "rsvp_count": 21,
@@ -17,23 +34,6 @@
       },
       "location": "Runway East Brighton | Office Space"
     },
-    {
-      "id": "314424362",
-      "name": "Christmas CTOs",
-      "date": "2026-12-08T18:30:00Z",
-      "duration": null,
-      "status": "upcoming",
-      "description": "Come along to talk about common challenges in running a technology function.",
-      "link": "https://www.meetup.com/brighton-cto/events/314424362/",
-      "rsvp_count": 3,
-      "venue": {
-        "name": "The Walrus Pub",
-        "address": "10 Ship Street"
-      },
-      "location": "The Walrus Pub"
-    }
-  ],
-  "past": [
     {
       "id": "314424285",
       "name": "Brighton CTO October Meetup",
