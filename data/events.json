@@ -1,6 +1,6 @@
 {
   "_comment": "This file is automatically updated by the GitHub Actions workflow (.github/workflows/fetch-events.yml). Do not edit manually.",
-  "_updated": "2026-11-23T17:33:27.980Z",
+  "_updated": "2026-11-24T17:04:31.570Z",
   "upcoming": [
     {
       "id": "314424362",
@@ -11,6 +11,21 @@
       "description": "Come along to talk about common challenges in running a technology function.",
       "link": "https://www.meetup.com/brighton-cto/events/314424362/",
       "rsvp_count": 4,
+      "venue": {
+        "name": "The Walrus Pub",
+        "address": "10 Ship Street"
+      },
+      "location": "The Walrus Pub"
+    },
+    {
+      "id": "317564278",
+      "name": "Brighton CTO January Meetup",
+      "date": "2027-01-20T18:30:00Z",
+      "duration": null,
+      "status": "upcoming",
+      "description": "Come along to talk about common challenges in running a technology function.",
+      "link": "https://www.meetup.com/brighton-cto/events/317564278/",
+      "rsvp_count": 1,
       "venue": {
         "name": "The Walrus Pub",
         "address": "10 Ship Street"
